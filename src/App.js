@@ -7,7 +7,7 @@ class App {
   constructor(){
     this.name = "Services"
     this.version = "1.0.0"
-    this.apiBase = 'http://localhost:3000'
+    this.apiBase = 'https://jbanks-capturepro-backend.onrender.com'
     this.rootEl = document.getElementById("root")
     this.version = "1.0.0"
   }
