@@ -29,7 +29,7 @@
 
 
 // RESPONSIVE - MOBILE ------------------------------------------------------------------
-@media all and (max-width:1366px){ 
+@media all and (max-width:1000px){ 
   .signinup-box {
     width: 70%;
     height: 80vh; 
@@ -67,7 +67,7 @@
 
 @media all and (max-width: 360px){ 
   .signup-box{
-    margin-top: 40px;
+    margin-top: 60px;
     overflow-x: scroll;
   }
 }
