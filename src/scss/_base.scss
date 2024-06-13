@@ -1,0 +1,852 @@
+// Base
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
+}
+body {
+  padding: 0;  
+  margin: 0;
+  color: var(--base-txt-color);
+  font-family: var(--base-font-family);
+  font-weight: var(--base-font-weight);
+  font-style: normal;
+  background: var(--body-bg);
+  height: 100vh;
+}
+
+// headings ------------
+h1, h2{
+  margin: 0 0 .5em;
+  color: var(--heading-color);
+  font-weight: var(--base-font-weight);
+}
+
+h1{
+  letter-spacing: 4px;
+}
+
+// links ---------------
+a {
+  color: var(--link-color);  
+}
+
+.nav-logo{
+  width: 175px;
+  margin-right: auto;
+}
+
+.nav-links {
+  margin-left: auto;  
+}
+
+// app splash screen -------
+.app-splash {
+  position: fixed;
+  background: #fff;
+  color: #777;
+  display: flex;
+  left: 0;
+  top:0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  .app-logo {
+    width: 180px;
+    display: block;
+    margin-bottom: 1em;
+  }
+}
+
+// helper classes ---------
+.calign {
+  text-align: center;
+}
+
+.large-text {
+  font-size: 1.6em;
+}
+
+.brand-color {
+  color: var(--brand-color);
+}
+
+// generic-entry ------------
+.generic-entry {
+  box-shadow: 0px 3px 5px rgba(0,0,0,0.07);
+  border-radius: 5px;
+  margin-bottom: .5em;
+  padding: 1em;
+  background: #fff;
+}
+
+// root ---------------
+#root {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;  
+  overflow: hidden;
+}
+
+// page --------------------
+.page-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  padding: 1em;
+  &.no-pad {
+    padding: 0;
+  }
+}
+
+.page-content-top{
+  margin-top: var(--app-header-height)
+}
+
+.page-content-profile{
+  margin-top: calc(var(--app-header-height) / 2);
+}
+
+
+// sign in + sign up pages ---------------------------------------------------
+.signinup-box {  
+  width:35%;
+  height: 89%;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1em 4.5em;
+  position: absolute;
+  top: 50%; /* Adjust as needed */
+  right: 160px; /* Adjust as needed */
+  transform: translate(0, -50%);
+}
+
+.signup-box{
+  padding-top: 2.5em;
+}
+
+.signinup-logo {
+  width: 275px;
+  margin-bottom: 1em;
+  margin: 50px;
+}
+
+.background {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+  z-index: -1; 
+}
+
+.bg-img {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  transform: scaleX(-1);
+}
+
+.login-heading{
+  font-size: 2.3em;
+}
+
+.submit-btn{
+  display: block;
+  margin: 40px auto 30px auto;
+  width:55%;
+}
+
+.signinup-box p{
+  text-align: center;
+  font-size: 0.7em;
+}
+
+.signup-btn{
+  margin-top: 1.5em;
+}
+.login-link {
+  margin-top: -1em;
+}
+.login-head{
+  margin-top: 22%;
+}
+
+
+// guide page ----------------------------------------------------------------
+.guide-step {
+  padding: 1em;
+  margin: 1.5em auto;
+  max-width: 600px;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.guide .app-header{
+  background-image: none;
+  box-shadow: none;
+}
+
+h4{
+  font-weight: 400;
+}
+.guide .nav-links a{
+  color: var(--brand-color)
+ }
+
+.guide .firstName{
+  color: var(--brand-color);
+}
+
+.container{
+  margin-top: 20vh;
+}
+
+.guide-img{
+  position: absolute;
+  border-radius: 12px;
+  z-index: 3;
+}
+
+.guide{
+  overflow-x: hidden;
+}
+
+.page-content-guide{
+  margin-top: calc(var(--app-header-height) + 5vh);
+}
+
+.page-content-guide h1{
+  font-size: 3.5em;
+}
+
+.tour{
+  font-size: 1.4em;
+}
+
+.arrow {
+  margin-top: 20px;
+  font-size: 1.8em;
+}
+
+.image-7{
+  margin-top: 132vh;
+  left: 5vw;
+  width: 11vw;
+}
+
+.image-8{
+  margin-top: 142vh;
+  right: 3.5vw;
+  width: 14vw;
+}
+
+.animate__animated.animate__fadeInUp{
+  --animate-duration: 2s;
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+// services page -------------------------------------------------------------
+.services-grid {
+  display:flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-left: 3.5em;
+  margin-right: 3.5em;
+  .service-card{
+    width: calc(25% - 3em);
+    margin: 1.5em;
+  }
+}
+
+// services dialog
+.service-dialog {
+  --width: 70%;
+}
+
+.service-dialog::part(body){
+  margin-top: -4em;
+}
+
+.service-dialog::part(header-actions) {
+  z-index: 1;
+}
+
+// filter 
+.filter-menu{
+  margin-top: var(--app-header-height);
+}
+
+h3{
+  font-size: 1em;
+  font-weight: 400;
+  display: inline-block;
+  padding: 10px;
+}
+
+.underline-effect{
+  display: inline-block;
+  position: relative;
+  margin: 0.7em;
+  padding: .4em ;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+.underline-effect::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  border-radius: 100px;
+  background-color: var( --brand-color);
+  transition: width 0.25s ease-out;
+}
+
+.underline-effect:hover::before{
+  width: 100%;
+}
+
+.underline-effect.clicked::before {
+  width: 100%; 
+  transition: none; 
+}
+
+.underline-effect.clicked{
+  font-weight: 400;
+
+}
+.underline-effect.clicked::after{
+  font-weight: 400;
+  width: 100%;
+  position: absolute;
+}
+
+
+// Photographers page -------------------------------------------------------------
+.photographers-grid {
+  display:flex;
+  flex-wrap: wrap;
+  margin-top: calc(var(--app-header-height) + 20px);
+  margin-left: 3.5em;
+  margin-right: 3.5em;
+  .photographer-card{
+    width: calc(33.3% - 3em);
+    margin: 1.5em;
+    img{
+      width: 90%;
+      display: block;
+      margin: 0 auto;
+      border-radius: 25px;
+    }
+    p{
+      font-size: 0.85em;
+    }
+  }
+}
+
+.photographer-profile .app-header h1{
+  width: 100%;
+  text-align: center;
+}
+
+.photographer-card h2{
+  margin-top: 20px;
+}
+
+
+// Home Page -------------------------------------------------------------
+.home .app-header{
+  background-image: none;
+  box-shadow: none;
+}
+
+.home .nav-links a{
+  color: var(--brand-color)
+ }
+
+.home .firstName{
+  color: var(--brand-color);
+}
+
+.home-img{
+  position: absolute;
+  border-radius: 12px;
+  z-index: 3;
+}
+
+.image-1{
+  margin-top: 20vh;
+  margin-left: -3vw;
+  width: 22vw;
+}
+
+.image-2{
+  margin-top: 14vh;
+  margin-left: 25vw;
+  width: 10vw;
+}
+
+.image-3{
+  margin-top: 17vh;
+  right: 12vw;
+  width: 14vw;
+ }
+
+.image-4{
+  margin-top: 50vh;
+  right: -2vw;
+  width: 20vw;
+}
+
+.image-5{
+  margin-top: 60vh;
+  left: 9vw;
+  width: 15vw;
+}
+
+.image-6{
+  margin-top: 68vh;
+  left: 37vw;
+  width: 22vw;
+}
+
+.home{
+  overflow: hidden;
+}
+
+.app-top-nav-home {
+  position: fixed;
+  display:flex;
+  width: 95%;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 3%;
+  padding: 3px;
+  align-items: center;
+  background-color: rgba(200, 210, 220, 0.35);
+  border-radius: 100px;
+  z-index: 10;
+}
+.app-top-nav-home a {
+  display: inline-block;
+  padding: .6em;
+  text-decoration: none;
+  color: #000000;
+}
+
+.homeBtn::part(base){
+  width: 100%;
+  height: 2.7em;
+  background: none;
+  box-shadow: none;
+  border: none;
+  align-items: center;
+}
+
+.homeBtn::part(label){
+  text-decoration: none;
+  color:var (--brand-color);
+  font-size: 1.5rem;
+  font-family: var(--base-font-family);
+  font-weight: 400;
+}
+
+.homeBtn span{
+  font-size: 2em;
+  color:var (--brand-color);
+  margin-left: 0;
+  transition: all .2s ease-in-out;
+}
+.homeBtn span:hover{
+  margin-left: 5px;
+}
+
+.page-content-home h1{
+  font-size: 3.5em;
+}
+
+
+// Profile page -------------------------------------------------------------
+.add-service {
+  margin-top: 20px;
+  display: flex; 
+  justify-content:flex-start; 
+}
+
+.profile-title{
+  position: absolute;
+  z-index: 9;
+  left:4vw;
+  margin: 20px;
+}
+
+.profile-grid{
+  margin-top: 10vh;
+}
+
+.add-service-btn{
+  margin: 5vh 5vw 10vh 5vw;
+}
+
+
+// Edit Profile page -------------------------------------------------------------
+.edit-profile .app-header{
+  background-image: none;
+  box-shadow: none;
+}
+
+.edit-profile .app-header .page-title{
+  display: none;
+}
+
+.edit-box{
+  background-color: #fff;
+  max-width: 700px;
+  padding: 30px 80px;
+  border-radius: 20px;
+  margin-top: 13vh;
+  margin-left: 5vw;
+}
+
+
+// New Service ------------------------------------------------------------------------
+.new-form{
+  margin-left: 4vw;
+}
+.new-service-btn{
+  width: 50%;
+}
+
+
+// RESPONSIVE - MOBILE ------------------------------------------------------------------
+@media all and (max-width: 768px){ 
+  .page-content-home{
+    h1{
+      font-size: 1.5em;
+    }
+    .homeBtn::part(label){
+      font-size: 1em;
+    }
+    .arrow{
+      font-size: 1.3em;
+      margin-top: 10px;
+    }
+  }
+
+  .home{
+    .hamburger-btn::part(base) {
+      display: block;
+      color: var(--brand-color);     
+    }
+    .app-header{
+      height: 10vh;
+      background-image: none;
+      box-shadow: none;
+    }
+  }
+
+  .home-image .image-4{
+    margin-top: 35em;
+  }
+}
+
+//services
+@media all and (max-width: 1000px){ 
+  .services-title{
+    h2{
+      font-size: 1.5em;
+    }
+    img{
+      width: 65vw;
+    }
+  }
+  .service-card p{
+    font-size: .8em;
+  }
+  .services-grid {
+    display:flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-left: 3.5em;
+    margin-right: 3.5em;
+    .service-card{
+      width: calc(33.3% - 3em);
+      margin: 1.5em;
+    }
+  }
+  .filter-menu{
+    font-size: 0.8em;
+  }
+}
+
+@media all and (max-width: 768px){
+  .app-header-main{
+    h1{
+     margin-top: -50px;
+    }
+  }
+  .service-card p{
+    font-size: .8em;
+  }
+  .services-grid {
+    display:flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    .service-card{
+      width: calc(50% - 3em);
+      margin: 1.5em;
+    }
+  }
+  .filter-menu{
+    font-size: 0.8em;
+  }
+}
+
+@media all and (max-width: 500px){
+  .app-header-main{
+    h1{
+      font-size: 2.2em;
+      margin-top: -35px;
+    }
+  }
+    
+  .services-grid {
+    display:flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    .service-card{
+      width: calc(100% - 1em);
+      margin: .5em;
+    }
+  }
+      
+  .filter-menu{
+    font-size: 0.6em;
+  }
+}
+
+//photographers
+@media all and (max-width: 1000px){
+  .photographers-grid {
+    .photographer-card{
+      width: calc(50% - 3em);
+      margin: 1.5em;
+    }
+  }
+  .photographer-profile .app-header h1{
+    font-size: 2.7em;
+  }
+}
+
+@media all and (max-width: 600px){
+  .photographers-grid {
+    margin-left: .5em;
+    margin-right: .5em;
+    .photographer-card{
+      width: calc(100% - 3em);
+      margin: 1.5em;
+    }
+  }
+  .photographer-profile .app-header h1{
+    font-size: 2em;
+  }
+}
+
+@media all and (max-width: 400px){
+  .photographer-profile .app-header h1{
+    font-size: 1.3em;
+  }
+}
+
+
+// edit profile
+@media all and (max-width:768px){ 
+  .edit-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 40px;
+    margin-left: 0;
+    width: 90%;
+  }
+  
+ .submit-btn::part(label){
+  font-size: .8em;
+  }
+
+  .edit-profile{
+    .hamburger-btn::part(base) {
+      display: block;
+      position: absolute;
+      z-index: 9;
+      color: white;     
+    }
+  }
+}
+
+@media all and (max-width:480px){ 
+  .edit-profile{
+    .hamburger-btn::part(base) {
+      margin-top: -40px;    
+    }
+  }
+  .edit-box{
+    padding: 25px;
+  }
+}
+
+@media all and (max-width:360px){ 
+  .edit-box{
+    h1{
+      font-size: 1.3em;
+    }
+    p{
+      font-size: 0.8em;
+    }
+    .submit-btn{
+      width: 100%;
+    }
+  } 
+}
+
+//guide
+@media all and (max-width: 768px){ 
+  .page-content-guide{
+    h1{
+      font-size: 1.5em;
+    }
+    .guideBtn::part(label){
+      font-size: 1em;
+    }
+    .arrow{
+      font-size: 1.3em;
+      margin-top: 10px;
+    }
+  }
+
+  .guide{
+    .hamburger-btn::part(base) {
+      display: block;
+      color: var(--brand-color);     
+    }
+    .app-header{
+      height: 10vh;
+      background-image: none;
+      box-shadow: none;
+    }
+  }
+
+  .guide-anim .image-7{
+    display: none;
+  }
+  .guide-anim .image-8{
+    display: none;
+  }
+
+  .guide-anim{
+    margin-top: -80px;
+  }
+
+  .tour{
+    font-size: 1em;
+    width: 40%;
+    margin: auto;
+  }
+
+  .image-4{
+    margin-top: 30vh;
+  }
+  .image-5{
+   margin-top: 40vh;
+  }
+}
+
+@media all and (max-width: 360px){ 
+  .tour{
+    font-size: 0.8em;
+  }
+  .image-4{
+    margin-top: 45vh;
+  }
+  .image-5{
+    margin-top: 45vh;
+  }
+  .image-1{
+    margin-top: 18vh;
+    width: 18vw;
+  }
+}
+
+
+//profile
+@media all and (max-width: 1000px){
+  .profile-grid{
+    margin-top: 10%;
+  }
+ 
+  .page-content-profile{
+    p{
+      font-size: 0.8em;
+    }
+  }
+}
+
+@media all and (max-width: 780px){
+  .profile-grid{
+    margin-top: 12%;
+  }
+}
+
+@media all and (max-width: 500px){
+  .profile-grid{
+    margin-top: 25%;
+  }
+}
+
+
+//add service 
+@media all and (max-width: 1000px){
+  .new .app-header .page-title{
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media all and (max-width: 700px){
+  .new .app-header .page-title{
+    font-size: 3em;
+  }
+}
+
+@media all and (max-width: 500px){
+  .new .app-header .page-title{
+    font-size: 2em;
+    margin-top: -30px;
+  }
+}

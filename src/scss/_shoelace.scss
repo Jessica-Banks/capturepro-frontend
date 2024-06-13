@@ -1,0 +1,56 @@
+// Shoelace
+// sl-button
+.submit-btn::part(base) {
+  background: var(--sl-color-primary-500);
+  font-family: var( --base-font-family);
+  font-weight: 300;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+}
+.submit-btn::part(base):hover {
+  background: var(--sl-color-primary-600)
+}
+
+// sl-button
+.click-btn::part(base) {
+  background: var(--sl-color-primary-500);
+  font-family: var( --base-font-family);
+  font-weight: 300;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  color: white;
+  padding: 0 20px;
+}
+.click-btn::part(base):hover {
+  background: var(--sl-color-primary-600);
+  color: white;
+}
+
+// sl-dialog
+sl-dialog::part(title){
+  font-weight: 500;
+  font-size: 1.6em;
+}
+
+
+// RESPONSIVE - MOBILE -------------------
+@media all and (max-width: 1000px){ 
+  sl-dialog::part(panel) {
+    width: 92%;
+  }
+}
+
+@media all and (max-width: 900px){ 
+  sl-dialog::part(panel) {
+    width: 90%;
+  }
+}
+
+@media all and (max-width: 768px){ 
+  sl-dialog::part(panel) {
+    width: 90%;
+    height: 75%;
+    max-height: none;
+    max-width: none;
+  }
+}

@@ -1,0 +1,73 @@
+// Forms
+.input-group {
+  margin-bottom: 0.3em;
+}
+
+.page-form {
+  max-width: 700px;
+}
+
+.input-field::part(form-control-label){
+  margin-top: 8px;
+ margin-bottom: 10px;
+ font-size: 0.9em;
+}
+
+.input-field::part(form-control-label):after {
+  content: none;
+}
+
+.input-field-signup::part(form-control-label){
+  margin-top: 4px;
+ margin-bottom: 10px;
+ font-size: 0.8em;
+}
+
+.input-field-signup::part(form-control-label):after {
+  content: none;
+}
+
+
+// RESPONSIVE - MOBILE ------------------------------------------------------------------
+@media all and (max-width:1366px){ 
+  .signinup-box {
+    width: 70%;
+    height: 80vh; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 40px;
+  }
+  .signinup-logo{
+    width: 200px;
+  }
+ .submit-btn::part(label){
+  font-size: .8em;
+  }
+}
+
+@media all and (max-width: 600px){ 
+  .signinup-box{ 
+    h1{
+     font-size: 1.5em;
+    }
+    a{
+     font-size: .8em;
+    }
+    padding: 40px;
+  }
+ .submit-btn{
+    width:80%;
+  }
+ .submit-btn::part(label){
+   font-size: .8em;
+ }
+}
+
+@media all and (max-width: 360px){ 
+  .signup-box{
+    margin-top: 40px;
+    overflow-x: scroll;
+  }
+}
