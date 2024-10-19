@@ -33,6 +33,23 @@ sl-dialog::part(title){
 }
 
 
+.add-fav-btn::part(base) {
+  background: white; /* White background */
+  color: var(--sl-color-primary-500); /* Green text */
+  border: 1px solid var(--sl-color-primary-500); /* Green outline */
+  font-family: var(--base-font-family);
+  font-weight: 300;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  padding: 0 20px;
+}
+.add-fav-btn::part(base):hover {
+  background: var( --sl-focus-ring-color-primary); /* Light green on hover */
+  color: var(--sl-color-primary-500); /* Green text */
+}
+
+
+
 // RESPONSIVE - MOBILE -------------------
 @media all and (max-width: 1000px){ 
   sl-dialog::part(panel) {

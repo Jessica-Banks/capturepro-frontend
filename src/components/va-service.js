@@ -148,7 +148,12 @@ customElements.define('va-service', class Service extends LitElement {
           <p class="price">$${this.price}</p>
           <p class="description">${this.description}</p>
       
-          <sl-button class="click-btn" @click=${this.addFavHandler.bind(this)} pill>
+          <sl-button class="click-btn" @click=${this.bookServiceHandler.bind(this)} pill>
+            <sl-icon slot="prefix" name="calendar"></sl-icon>
+            Request Booking
+          </sl-button>
+
+          <sl-button class="click-btn add-fav-btn" @click=${this.addFavHandler.bind(this)} pill>
             <sl-icon slot="prefix" name="heart-fill"></sl-icon>
             Add to Favourites
           </sl-button>
@@ -178,6 +183,86 @@ customElements.define('va-service', class Service extends LitElement {
     }
   }
 
+  
+  async bookServiceHandler() {
+    const bookingDialogEl = document.createElement('sl-dialog');
+    bookingDialogEl.className = 'booking-dialog';
+    
+
+  
+    const bookingFormContent = html`
+      <style>
+        .form {
+          display: flex;
+          flex-direction: column;
+          gap: 1em;
+          padding: 1em 5em 5em 5em;
+        }
+        .name-fields, .contact-fields, .date-time {
+        display: flex;
+        gap: 1em; /* Space between first and last name inputs */
+      }
+      sl-input, sl-textarea {
+        flex: 1; /* Make inputs take full width of the container */
+        min-width: 0; /* Allow inputs to be narrower if necessary */
+      }
+      sl-button {
+        align-self: flex-start; /* Align button to the left, or you can use 'center' for centering */
+        margin-top: 20px;
+      }
+      h2{
+        margin-left: 3em;
+      }
+      </style>
+      <h2>Book ${this.name}</h2>
+      <form class="form" @submit=${this.closeBookingDialog.bind(this, bookingDialogEl)}>
+      <div class="name-fields">
+        <sl-input label="First Name" name="firstName" required></sl-input>
+        <sl-input label="Last Name" name="lastName" required></sl-input>
+      </div>
+      <div class="contact-fields">
+        <sl-input type="email" label="Your Email" name="email" required></sl-input>
+        <sl-input type="tel" label="Your Phone Number" name="phone"></sl-input>
+      </div>
+      <div class="date-time">
+        <sl-input type="date" label="Booking Date" name="date" required></sl-input>
+        <sl-input type="time" label="Preferred Time" name="time" required></sl-input>
+      </div>
+      <sl-textarea label="Message" name="message" placeholder="Any additional information..."></sl-textarea>
+      <sl-button class="click-btn" type="submit" pill>Request Booking</sl-button>
+    </form>
+    `;
+    render(bookingFormContent, bookingDialogEl);
+
+    await document.body.append(bookingDialogEl);
+    bookingDialogEl.show();
+
+    bookingDialogEl.addEventListener('sl-after-hide', () => {
+      bookingDialogEl.remove();
+    });
+  }
+
+  closeBookingDialog(dialogEl, event) {
+    event.preventDefault(); // Prevent default form submission
+    const formData = new FormData(event.target);
+    const firstName = formData.get('firstName');
+    const lastName = formData.get('lastName');
+    const email = formData.get('email');
+    const phone = formData.get('phone');
+    const date = formData.get('date');
+    const time = formData.get('time');
+  
+    // Check if all required fields are filled
+    if (firstName && lastName && email && date && time) {
+      // Perform your booking request logic here
+  
+      Toast.show('Booking requested!'); // Show confirmation message
+      dialogEl.hide(); // Close the dialog
+    } else {
+      Toast.show('Please fill out all required fields.', 'error'); // Show error message
+    }
+  }
+  
   render(){    
     return html`
     <style>
